@@ -24,7 +24,7 @@ effect fn main() -> Unit = {
     ok(n)  => n,
     err(_) => x.DEFAULT_POLL_MS,
   }
-  run(base, key, uid, poll_ms)
+  run(base, key, uid, poll_ms)!
 }
 
 effect fn run(base: String, key: String, uid: String, poll_ms: Int) -> Unit = {
