@@ -1,12 +1,12 @@
 # fizz-x-mention-source
 
 **Fizz** コメント入力系部品 — X (旧 Twitter) のメンションを XAPI proxy 経由で
-polling し、正規化コメント ([fizz-protocol](https://github.com/Aid-On/fizz-protocol)
+polling し、正規化コメント ([fizz-protocol](https://github.com/aiviecast/fizz-protocol)
 の `Comment`、source = `XMention`) を NDJSON で stdout に流す。
 
 責務は一行: **XAPI /api/mentions → comment ストリーム**。
 投稿 (tweet) はしない — それは x-control 系部品の責務。
-dedupe は [fizz-comment-dedupe](https://github.com/Aid-On/fizz-comment-dedupe) の責務
+dedupe は [fizz-comment-dedupe](https://github.com/aiviecast/fizz-comment-dedupe) の責務
 (sinceId 前進により通常は重複しないが、保険として通す)。
 
 ## 前提: XAPI proxy

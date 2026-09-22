@@ -4,4 +4,4 @@ version = "0.1.0"
 description = "Fizz comment source — X (Twitter) mentions via XAPI proxy → normalized Comment NDJSON"
 
 [dependencies]
-fizz_protocol = { git = "https://github.com/Aid-On/fizz-protocol", tag = "v0.2.1" }
+fizz_protocol = { git = "https://github.com/aiviecast/fizz-protocol", tag = "v0.2.1" }
