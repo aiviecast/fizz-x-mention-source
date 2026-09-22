@@ -31,7 +31,7 @@ fn mentions_url(base_url: String, x_user_id: String, since_id: Option[String]) -
 
 // ── JSON 取り出しヘルパ ──────────────────────────────────────────────
 
-local fn jget(v: Value, key: String) -> Value = value.get(v, key) ?? value.null()
+local fn jget(v: Value, key: String) -> Value = value.field(v, key) ?? value.null()
 
 local fn jstr(v: Value, key: String) -> Option[String] =
   result.to_option(value.as_string(jget(v, key)))
