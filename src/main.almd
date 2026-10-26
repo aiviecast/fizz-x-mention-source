@@ -35,7 +35,7 @@ effect fn run(base: String, key: String, uid: String, poll_ms: Int) -> Unit = {
   eprintln("[x] polling mentions every ${int.to_string(poll_ms)}ms (xUserId=${uid})")
   while true {
     let headers = ["authorization": "Bearer ${key}"]
-    match http.request("GET", x.mentions_url(base, uid, since), "", headers) {
+    match http.request("GET", x.mentions_url(base, uid, since), "", map.to_list(headers)) {
       err(e) => eprintln("[x] http error: ${e}"),
       ok(body) => match x.parse_mentions(body) {
         err(e) => eprintln("[x] parse error: ${e}"),
